@@ -1,3 +1,5 @@
+# @Todo: Update
+
 FROM python:3.10.5
 
 RUN apt-get update && apt-get install -y \
@@ -9,4 +11,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD ["python3", "main.py"]
+CMD ["python3", "app.py"]

@@ -1,0 +1,4 @@
+name: briareus
+deploymentType: restapi
+replicas: 3
+serviceType: LoadBalancer

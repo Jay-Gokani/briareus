@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: briareus-service
+  name: {{ .Values.name }}-service
 spec:
-  type: LoadBalancer
+  type: {{ .Values.serviceType }}
   selector:
-    app: briareus
+    app: {{ .Values.name }}
   ports:
   - protocol: "TCP"
     port: 8000

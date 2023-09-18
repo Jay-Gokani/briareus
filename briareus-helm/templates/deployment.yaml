@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: briareus-deployment
+  name: {{ .Values.name }}-deployment
   labels:
-    type: restapi
+    type: {{ .Values.deploymentType }}
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: briareus
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: briareus
+        app: {{ .Values.name }}
     spec:
       containers:
-      - name: briareus
+      - name: {{ .Values.name }}
         image: jaygokani/briareus:v2
         ports:
         - containerPort: 5000

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: briareus-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: briareus
+  ports:
+  - protocol: "TCP"
+    port: 8000
+    targetPort: 5000

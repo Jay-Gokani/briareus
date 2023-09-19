@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}-deployment
-  labels:
-    type: {{ .Values.deploymentType }}
+  # name: {{ .Values.name }}-deployment
+  name: {{ .Values.name }}
+  # labels:
+  #   type: {{ .Values.deploymentType }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
@@ -16,6 +17,8 @@ spec:
     spec:
       containers:
       - name: {{ .Values.name }}
-        image: jaygokani/briareus:v2
+        # image: jaygokani/briareus:v2
+        image: docker.io/jaygokani/briareus:v2
         ports:
         - containerPort: 5000
+        command: ["python3", "app.py"]

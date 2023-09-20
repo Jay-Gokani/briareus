@@ -29,9 +29,18 @@ In the below, username is 'jaygokani' and repo is 'briareus'. The tag is to your
 
 ```
 docker login -u jaygokani
-docker tag briareus_v1 jaygokani/briareus:[tag]
-docker push jaygokani/briareus:[tag]
+docker tag briareus_v1 jaygokani/briareus:v1
+docker push jaygokani/briareus:v1
 ```
+
+If building for amd64:
+
+```
+docker buildx build --platform=linux/amd64 -t briareus-amd64-v1 .
+docker tag briareus-amd64-v1 jaygokani/briareus:amd64
+docker push jaygokani/briareus:amd64
+```
+
 
 ### Minikube & Kubernetes
 ```

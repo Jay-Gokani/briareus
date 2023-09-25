@@ -18,7 +18,7 @@ spec:
       containers:
       - name: {{ .Values.name }}
         # image: jaygokani/briareus:v2
-        image: docker.io/jaygokani/briareus:v2
+        image: docker.io/jaygokani/briareus:amd64
         ports:
         - containerPort: 5000
         command: ["python3", "app.py"]

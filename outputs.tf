@@ -1,0 +1,1 @@
+# Used to pass info defined by the module to other parts of config.
